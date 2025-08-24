@@ -18,6 +18,21 @@ public class bubble_sort {
         }
     }
 
+    // selection sorting
+    public static void selection(int arr[]) {
+        for (int i = 0; i < arr.length - 1; i++) {
+            int min = i;
+            for (int j = i + 1; j < arr.length - 1; j++) {
+                if (arr[min] > arr[j]) {
+                    min = j;
+                }
+            }
+
+            swap(arr, i, min);
+
+        }
+    }
+
     public static void print(int arr[]) {
         for (int i = 0; i < arr.length; i++) {
             System.out.print(arr[i] + " ");
@@ -28,6 +43,11 @@ public class bubble_sort {
         int arr[] = {5, 4, 1, 3, 2};
 
         bubble_sorts(arr);
+        System.out.println("sorting by bubble");
+        print(arr);
+        System.out.println();
+        selection(arr);
+        System.out.println("sort by selection");
         print(arr);
     }
 }
