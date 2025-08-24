@@ -33,6 +33,22 @@ public class bubble_sort {
         }
     }
 
+    public static void insertation_sort(int arr[]) {
+
+        int n = arr.length;
+        for (int i = 1; i < n - 1; i++) {
+            int curr = arr[i];
+            int prev = i - 1;
+            while (prev >= 0 && arr[prev] > arr[curr]) {
+                arr[prev + 1] = arr[prev];
+                prev--;
+            }
+
+            arr[prev + 1] = curr;
+        }
+
+    }
+
     public static void print(int arr[]) {
         for (int i = 0; i < arr.length; i++) {
             System.out.print(arr[i] + " ");
@@ -48,6 +64,10 @@ public class bubble_sort {
         System.out.println();
         selection(arr);
         System.out.println("sort by selection");
+        print(arr);
+        insertation_sort(arr);
+        System.out.println();
+        System.out.println("sort by insertation");
         print(arr);
     }
 }
